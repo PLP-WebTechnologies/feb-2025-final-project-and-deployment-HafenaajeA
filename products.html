@@ -1,457 +1,638 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products - ShopEasy</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <div class="logo">
-                <h1>ShopEasy</h1>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html" class="active">Products</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="cart-icon">
-                <a href="#" id="cart-btn"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a>
-            </div>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
+      <div class="container">
+        <div class="logo">
+          <h1>ShopEasy</h1>
         </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="cart-icon">
+          <a href="#" id="cart-btn"
+            ><i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span></a
+          >
+        </div>
+        <div class="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
     </header>
 
     <section class="page-header">
-        <div class="container">
-            <h1>Our Products</h1>
-            <div class="breadcrumb">
-                <a href="index.html">Home</a> / <span>Products</span>
-            </div>
+      <div class="container">
+        <h1>Our Products</h1>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> / <span>Products</span>
         </div>
+      </div>
     </section>
 
     <section class="products-container">
-        <div class="container">
-            <div class="filter-container">
-                <div class="filter-section">
-                    <h3>Categories</h3>
-                    <ul class="category-filter">
-                        <li><a href="#" class="active" data-category="all">All Products</a></li>
-                        <li><a href="#" data-category="electronics">Electronics</a></li>
-                        <li><a href="#" data-category="fashion">Fashion</a></li>
-                        <li><a href="#" data-category="home">Home & Kitchen</a></li>
-                        <li><a href="#" data-category="beauty">Beauty</a></li>
-                    </ul>
-                </div>
-                <div class="filter-section">
-                    <h3>Price Range</h3>
-                    <div class="price-slider">
-                        <input type="range" id="price-range" min="0" max="500" value="500">
-                        <div class="price-values">
-                            <span>$0</span>
-                            <span id="price-value">$500</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="filter-section">
-                    <h3>Sort By</h3>
-                    <select id="sort-by">
-                        <option value="default">Default</option>
-                        <option value="price-low">Price: Low to High</option>
-                        <option value="price-high">Price: High to Low</option>
-                        <option value="name-asc">Name: A to Z</option>
-                        <option value="name-desc">Name: Z to A</option>
-                    </select>
-                </div>
+      <div class="container">
+        <div class="filter-container">
+          <div class="filter-section">
+            <h3>Categories</h3>
+            <ul class="category-filter">
+              <li>
+                <a href="#" class="active" data-category="all">All Products</a>
+              </li>
+              <li><a href="#" data-category="electronics">Electronics</a></li>
+              <li><a href="#" data-category="fashion">Fashion</a></li>
+              <li><a href="#" data-category="home">Home & Kitchen</a></li>
+              <li><a href="#" data-category="beauty">Beauty</a></li>
+            </ul>
+          </div>
+          <div class="filter-section">
+            <h3>Price Range</h3>
+            <div class="price-slider">
+              <input
+                type="range"
+                id="price-range"
+                min="0"
+                max="5000"
+                value="5000"
+              />
+              <div class="price-values">
+                <span>$0</span>
+                <span id="price-value">$5000</span>
+              </div>
             </div>
-
-            <div class="products-grid">
-                <!-- Electronics Category -->
-                <div class="product-card" data-category="electronics" data-price="99.99" id="electronics">
-                    <div class="product-img">
-                        <img src="images/product1.jpg" alt="Wireless Headphones">
-                        <div class="product-tag">New</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Wireless Headphones</h3>
-                        <div class="product-price">$99.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span>(4.5)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="1" data-name="Wireless Headphones" data-price="99.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="electronics" data-price="149.99">
-                    <div class="product-img">
-                        <img src="images/product2.jpg" alt="Smart Watch">
-                        <div class="product-tag sale">Sale</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Smart Watch</h3>
-                        <div class="product-price"><span class="old-price">$199.99</span> $149.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span>(4.0)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="2" data-name="Smart Watch" data-price="149.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="electronics" data-price="79.99">
-                    <div class="product-img">
-                        <img src="images/product3.jpg" alt="Bluetooth Speaker">
-                    </div>
-                    <div class="product-info">
-                        <h3>Bluetooth Speaker</h3>
-                        <div class="product-price">$79.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>(5.0)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="3" data-name="Bluetooth Speaker" data-price="79.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="electronics" data-price="49.99">
-                    <div class="product-img">
-                        <img src="images/product4.jpg" alt="Wireless Charger">
-                    </div>
-                    <div class="product-info">
-                        <h3>Wireless Charger</h3>
-                        <div class="product-price">$49.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <i class="far fa-star"></i>
-                            <span>(3.5)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="4" data-name="Wireless Charger" data-price="49.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Fashion Category -->
-                <div class="product-card" data-category="fashion" data-price="59.99" id="fashion">
-                    <div class="product-img">
-                        <img src="images/fashion1.jpg" alt="Men's Casual Shirt">
-                    </div>
-                    <div class="product-info">
-                        <h3>Men's Casual Shirt</h3>
-                        <div class="product-price">$59.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span>(4.0)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="5" data-name="Men's Casual Shirt" data-price="59.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="fashion" data-price="89.99">
-                    <div class="product-img">
-                        <img src="images/fashion2.jpg" alt="Women's Dress">
-                        <div class="product-tag">New</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Women's Dress</h3>
-                        <div class="product-price">$89.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span>(4.5)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="6" data-name="Women's Dress" data-price="89.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="fashion" data-price="129.99">
-                    <div class="product-img">
-                        <img src="images/fashion3.jpg" alt="Leather Jacket">
-                    </div>
-                    <div class="product-info">
-                        <h3>Leather Jacket</h3>
-                        <div class="product-price">$129.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>(5.0)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="7" data-name="Leather Jacket" data-price="129.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="fashion" data-price="39.99">
-                    <div class="product-img">
-                        <img src="images/fashion4.jpg" alt="Casual Sneakers">
-                        <div class="product-tag sale">Sale</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Casual Sneakers</h3>
-                        <div class="product-price"><span class="old-price">$59.99</span> $39.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <i class="far fa-star"></i>
-                            <span>(3.5)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="8" data-name="Casual Sneakers" data-price="39.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Home & Kitchen Category -->
-                <div class="product-card" data-category="home" data-price="199.99" id="home">
-                    <div class="product-img">
-                        <img src="images/home1.jpg" alt="Coffee Maker">
-                    </div>
-                    <div class="product-info">
-                        <h3>Coffee Maker</h3>
-                        <div class="product-price">$199.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span>(4.0)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="9" data-name="Coffee Maker" data-price="199.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="home" data-price="299.99">
-                    <div class="product-img">
-                        <img src="images/home2.jpg" alt="Blender">
-                        <div class="product-tag">New</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Blender</h3>
-                        <div class="product-price">$299.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span>(4.5)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="10" data-name="Blender" data-price="299.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="home" data-price="149.99">
-                    <div class="product-img">
-                        <img src="images/home3.jpg" alt="Toaster">
-                    </div>
-                    <div class="product-info">
-                        <h3>Toaster</h3>
-                        <div class="product-price">$149.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>(5.0)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="11" data-name="Toaster" data-price="149.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="home" data-price="79.99">
-                    <div class="product-img">
-                        <img src="images/home4.jpg" alt="Cookware Set">
-                        <div class="product-tag sale">Sale</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Cookware Set</h3>
-                        <div class="product-price"><span class="old-price">$129.99</span> $79.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <i class="far fa-star"></i>
-                            <span>(3.5)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="12" data-name="Cookware Set" data-price="79.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Beauty Category -->
-                <div class="product-card" data-category="beauty" data-price="29.99" id="beauty">
-                    <div class="product-img">
-                        <img src="images/beauty1.jpg" alt="Face Cream">
-                    </div>
-                    <div class="product-info">
-                        <h3>Face Cream</h3>
-                        <div class="product-price">$29.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span>(4.0)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="13" data-name="Face Cream" data-price="29.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="beauty" data-price="19.99">
-                    <div class="product-img">
-                        <img src="images/beauty2.jpg" alt="Lipstick">
-                        <div class="product-tag">New</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Lipstick</h3>
-                        <div class="product-price">$19.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span>(4.5)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="14" data-name="Lipstick" data-price="19.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="beauty" data-price="39.99">
-                    <div class="product-img">
-                        <img src="images/beauty3.jpg" alt="Perfume">
-                    </div>
-                    <div class="product-info">
-                        <h3>Perfume</h3>
-                        <div class="product-price">$39.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>(5.0)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="15" data-name="Perfume" data-price="39.99">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="beauty" data-price="24.99">
-                    <div class="product-img">
-                        <img src="images/beauty4.jpg" alt="Makeup Kit">
-                        <div class="product-tag sale">Sale</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Makeup Kit</h3>
-                        <div class="product-price"><span class="old-price">$34.99</span> $24.99</div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <i class="far fa-star"></i>
-                            <span>(3.5)</span>
-                        </div>
-                        <button class="add-to-cart" data-id="16" data-name="Makeup Kit" data-price="24.99">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pagination">
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">Next</a>
-            </div>
+          </div>
+          <div class="filter-section">
+            <h3>Sort By</h3>
+            <select id="sort-by">
+              <option value="default">Default</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name-asc">Name: A to Z</option>
+              <option value="name-desc">Name: Z to A</option>
+            </select>
+          </div>
         </div>
+
+        <div class="products-grid">
+          <!-- Electronics Category -->
+          <div
+            class="product-card"
+            data-category="electronics"
+            data-price="99.99"
+            id="electronics"
+          >
+            <div class="product-img">
+              <img
+                src="images/product_img/Wireless Headphones.jpg"
+                alt="Wireless Headphones"
+              />
+              <div class="product-tag">New</div>
+            </div>
+            <div class="product-info">
+              <h3>Wireless Headphones</h3>
+              <div class="product-price">N$199.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(4.5)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="1"
+                data-name="Wireless Headphones"
+                data-price="99.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="product-card"
+            data-category="electronics"
+            data-price="149.99"
+          >
+            <div class="product-img">
+              <img src="images/product_img/Smart Watch.jpg" alt="Smart Watch" />
+              <div class="product-tag sale">Sale</div>
+            </div>
+            <div class="product-info">
+              <h3>Smart Watch</h3>
+              <div class="product-price">
+                <span class="old-price">N$199.99</span> N$149.99
+              </div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(4.0)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="2"
+                data-name="Smart Watch"
+                data-price="149.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="product-card"
+            data-category="electronics"
+            data-price="79.99"
+          >
+            <div class="product-img">
+              <img
+                src="images/product_img/Bluetooth Speaker.jpg"
+                alt="Bluetooth Speaker"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Bluetooth Speaker</h3>
+              <div class="product-price">N$79.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(5.0)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="3"
+                data-name="Bluetooth Speaker"
+                data-price="79.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="product-card"
+            data-category="electronics"
+            data-price="49.99"
+          >
+            <div class="product-img">
+              <img
+                src="images/product_img/Wireless Charger.jpg"
+                alt="Wireless Charger"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Wireless Charger</h3>
+              <div class="product-price">N$49.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+                <span>(3.5)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="4"
+                data-name="Wireless Charger"
+                data-price="49.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Fashion Category -->
+          <div
+            class="product-card"
+            data-category="fashion"
+            data-price="59.99"
+            id="fashion"
+          >
+            <div class="product-img">
+              <img src="images/fashion1.jpg" alt="Men's Casual Shirt" />
+            </div>
+            <div class="product-info">
+              <h3>Men's Casual Shirt</h3>
+              <div class="product-price">N$59.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(4.0)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="5"
+                data-name="Men's Casual Shirt"
+                data-price="59.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="fashion" data-price="89.99">
+            <div class="product-img">
+              <img src="images/fashion2.jpg" alt="Women's Dress" />
+              <div class="product-tag">New</div>
+            </div>
+            <div class="product-info">
+              <h3>Women's Dress</h3>
+              <div class="product-price">$89.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(4.5)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="6"
+                data-name="Women's Dress"
+                data-price="89.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="fashion" data-price="129.99">
+            <div class="product-img">
+              <img src="images/fashion3.jpg" alt="Leather Jacket" />
+            </div>
+            <div class="product-info">
+              <h3>Leather Jacket</h3>
+              <div class="product-price">$129.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(5.0)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="7"
+                data-name="Leather Jacket"
+                data-price="129.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="fashion" data-price="39.99">
+            <div class="product-img">
+              <img src="images/fashion4.jpg" alt="Casual Sneakers" />
+              <div class="product-tag sale">Sale</div>
+            </div>
+            <div class="product-info">
+              <h3>Casual Sneakers</h3>
+              <div class="product-price">
+                <span class="old-price">$59.99</span> $39.99
+              </div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+                <span>(3.5)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="8"
+                data-name="Casual Sneakers"
+                data-price="39.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Home & Kitchen Category -->
+          <div
+            class="product-card"
+            data-category="home"
+            data-price="199.99"
+            id="home"
+          >
+            <div class="product-img">
+              <img src="images/home1.jpg" alt="Coffee Maker" />
+            </div>
+            <div class="product-info">
+              <h3>Coffee Maker</h3>
+              <div class="product-price">$199.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(4.0)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="9"
+                data-name="Coffee Maker"
+                data-price="199.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="home" data-price="299.99">
+            <div class="product-img">
+              <img src="images/home2.jpg" alt="Blender" />
+              <div class="product-tag">New</div>
+            </div>
+            <div class="product-info">
+              <h3>Blender</h3>
+              <div class="product-price">$299.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(4.5)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="10"
+                data-name="Blender"
+                data-price="299.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="home" data-price="149.99">
+            <div class="product-img">
+              <img src="images/home3.jpg" alt="Toaster" />
+            </div>
+            <div class="product-info">
+              <h3>Toaster</h3>
+              <div class="product-price">$149.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(5.0)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="11"
+                data-name="Toaster"
+                data-price="149.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="home" data-price="79.99">
+            <div class="product-img">
+              <img src="images/home4.jpg" alt="Cookware Set" />
+              <div class="product-tag sale">Sale</div>
+            </div>
+            <div class="product-info">
+              <h3>Cookware Set</h3>
+              <div class="product-price">
+                <span class="old-price">$129.99</span> $79.99
+              </div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+                <span>(3.5)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="12"
+                data-name="Cookware Set"
+                data-price="79.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Beauty Category -->
+          <div
+            class="product-card"
+            data-category="beauty"
+            data-price="29.99"
+            id="beauty"
+          >
+            <div class="product-img">
+              <img src="images/beauty1.jpg" alt="Face Cream" />
+            </div>
+            <div class="product-info">
+              <h3>Face Cream</h3>
+              <div class="product-price">$29.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(4.0)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="13"
+                data-name="Face Cream"
+                data-price="29.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="beauty" data-price="19.99">
+            <div class="product-img">
+              <img src="images/beauty2.jpg" alt="Lipstick" />
+              <div class="product-tag">New</div>
+            </div>
+            <div class="product-info">
+              <h3>Lipstick</h3>
+              <div class="product-price">$19.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(4.5)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="14"
+                data-name="Lipstick"
+                data-price="19.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="beauty" data-price="39.99">
+            <div class="product-img">
+              <img src="images/beauty3.jpg" alt="Perfume" />
+            </div>
+            <div class="product-info">
+              <h3>Perfume</h3>
+              <div class="product-price">$39.99</div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(5.0)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="15"
+                data-name="Perfume"
+                data-price="39.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="beauty" data-price="24.99">
+            <div class="product-img">
+              <img src="images/beauty4.jpg" alt="Makeup Kit" />
+              <div class="product-tag sale">Sale</div>
+            </div>
+            <div class="product-info">
+              <h3>Makeup Kit</h3>
+              <div class="product-price">
+                <span class="old-price">$34.99</span> $24.99
+              </div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+                <span>(3.5)</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="16"
+                data-name="Makeup Kit"
+                data-price="24.99"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pagination">
+          <a href="#" class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">Next</a>
+        </div>
+      </div>
     </section>
 
     <div class="cart-overlay">
-        <div class="cart">
-            <h2>Your Cart</h2>
-            <div class="cart-close">
-                <i class="fas fa-times"></i>
-            </div>
-            <div class="cart-items">
-                <!-- Cart items will be added here dynamically -->
-            </div>
-            <div class="cart-footer">
-                <h3>Total: $<span class="cart-total">0</span></h3>
-                <button class="btn checkout-btn">Checkout</button>
-            </div>
+      <div class="cart">
+        <h2>Your Cart</h2>
+        <div class="cart-close">
+          <i class="fas fa-times"></i>
         </div>
+        <div class="cart-items">
+          <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-footer">
+          <h3>Total: $<span class="cart-total">0</span></h3>
+          <button class="btn checkout-btn">Checkout</button>
+        </div>
+      </div>
     </div>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <h3>About ShopEasy</h3>
-                    <p>ShopEasy is your one-stop shop for all your needs. We offer high-quality products at competitive prices.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section contact">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</p>
-                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
-                    <p><i class="fas fa-envelope"></i> info@shopeasy.com</p>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h3>About ShopEasy</h3>
+            <p>
+              ShopEasy is your one-stop shop for all your needs. We offer
+              high-quality products at competitive prices.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 ShopEasy. All Rights Reserved.</p>
-            </div>
+          </div>
+          <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+          <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Eveline street, Windhoek,
+              Namibia
+            </p>
+            <p><i class="fas fa-phone"></i> +264 81 659 9224</p>
+            <p><i class="fas fa-envelope"></i> info@shopeasy.com.na</p>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 ShopEasy. All Rights Reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
