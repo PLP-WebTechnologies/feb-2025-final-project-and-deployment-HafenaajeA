@@ -970,7 +970,49 @@ footer {
   padding: 20px;
   max-height: 1000px;
 }
+/* Privacy Policy and Terms & Conditions Styles */
+.privacy-policy,
+.terms-conditions {
+  padding: 60px 0;
+  background-color: #fff;
+}
 
+.policy-content,
+.terms-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.policy-section,
+.terms-section {
+  margin-bottom: 30px;
+}
+
+.policy-section h3,
+.terms-section h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.policy-section p,
+.terms-section p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.policy-section ul,
+.terms-section ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.policy-section ul li,
+.terms-section ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
 /* Responsive Styles */
 @media (max-width: 1200px) {
   .product-slider,
