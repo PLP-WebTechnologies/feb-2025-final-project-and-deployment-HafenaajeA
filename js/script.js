@@ -273,66 +273,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Filter products function
-    function filterProducts() {
+    async function filterProducts() {
       const activeCategory = document.querySelector(".category-filter a.active")
         .dataset.category;
       const maxPrice = priceRange ? parseFloat(priceRange.value) : 500;
       const sortValue = sortBy ? sortBy.value : "default";
 
-      // Filter by category and price
-      productCards.forEach((card) => {
-        const cardCategory = card.dataset.category;
-        const cardPrice = parseFloat(card.dataset.price);
-
-        if (
-          (activeCategory === "all" || cardCategory === activeCategory) &&
-          cardPrice <= maxPrice
-        ) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
-      });
-
-      // Sort products
-      const productsArray = Array.from(productCards).filter(
-        (card) => card.style.display !== "none"
-      );
-
-      switch (sortValue) {
-        case "price-low":
-          productsArray.sort(
-            (a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price)
-          );
-          break;
-        case "price-high":
-          productsArray.sort(
-            (a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price)
-          );
-          break;
-        case "name-asc":
-          productsArray.sort((a, b) =>
-            a
-              .querySelector("h3")
-              .textContent.localeCompare(b.querySelector("h3").textContent)
-          );
-          break;
-        case "name-desc":
-          productsArray.sort((a, b) =>
-            b
-              .querySelector("h3")
-              .textContent.localeCompare(a.querySelector("h3").textContent)
-          );
-          break;
-        default:
-          // Default sorting (no sorting)
-          break;
-      }
-
-      // Append sorted products to grid
-      productsArray.forEach((card) => {
-        productsGrid.appendChild(card);
-      });
+      const products = await fetchProducts(activeCategory, maxPrice, sortValue);
+      renderProducts(products);
     }
   }
 
@@ -461,3 +409,81 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Function to fetch products from API
+async function fetchProducts(category = "all", price = null, sort = null) {
+  let url = "api/products.php?";
+  if (category) url += `category=${category}&`;
+  if (price) url += `price=${price}&`;
+  if (sort) url += `sort=${sort}`;
+
+  try {
+    const response = await fetch(url);
+    const products = await response.json();
+    return products;
+  } catch (error) {
+    console.error("Error:", error);
+    return [];
+  }
+}
+
+// Function to render products
+function renderProducts(products) {
+  const productsGrid = document.querySelector(".products-grid");
+  if (!productsGrid) return;
+
+  productsGrid.innerHTML = "";
+
+  products.forEach((product) => {
+    const productCard = `
+            <div class="product-card" data-category="${product.category_name.toLowerCase()}" data-price="${
+      product.price
+    }">
+                <div class="product-img">
+                    <img src="images/product_img/${product.image}" alt="${
+      product.name
+    }">
+                    ${
+                      product.is_sale
+                        ? '<div class="product-tag sale">Sale</div>'
+                        : ""
+                    }
+                    ${
+                      product.is_featured
+                        ? '<div class="product-tag">New</div>'
+                        : ""
+                    }
+                </div>
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <div class="product-price">
+                        ${
+                          product.old_price
+                            ? `<span class="old-price">$${product.old_price}</span>`
+                            : ""
+                        }
+                        $${product.price}
+                    </div>
+                    <button class="add-to-cart" 
+                        data-id="${product.id}" 
+                        data-name="${product.name}" 
+                        data-price="${product.price}">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        `;
+    productsGrid.innerHTML += productCard;
+  });
+
+  // Reattach event listeners to new buttons
+  const addToCartBtns = document.querySelectorAll(".add-to-cart");
+  addToCartBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const id = this.dataset.id;
+      const name = this.dataset.name;
+      const price = this.dataset.price;
+      addToCart(id, name, price);
+    });
+  });
+}
